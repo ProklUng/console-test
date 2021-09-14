@@ -12,6 +12,7 @@ and helps make your tests more expressive and concise.
 
 composer.json:
 
+```bash
 ...
 "repositories": [
 {
@@ -25,10 +26,6 @@ composer.json:
 ...
 },
 ...
-```
-
-```bash
-composer require --dev zenstruck/console-test
 ```
 
 ## Отличия от оригинала
