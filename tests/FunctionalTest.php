@@ -6,6 +6,7 @@ use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
 use Symfony\Component\Console\Exception\CommandNotFoundException;
 use Zenstruck\Console\Test\InteractsWithConsole;
 use Zenstruck\Console\Test\Tests\Fixture\FixtureCommand;
+use Zenstruck\Console\Test\Tests\Fixture\Kernel;
 
 /**
  * @author Kevin Bond <kevinbond@gmail.com>
@@ -13,6 +14,20 @@ use Zenstruck\Console\Test\Tests\Fixture\FixtureCommand;
 final class FunctionalTest extends KernelTestCase
 {
     use InteractsWithConsole;
+
+    /**
+     * @var Kernel $kernel
+     */
+    protected static $kernel;
+
+    /**
+     * @inheritDoc
+     */
+    protected function setUp(): void
+    {
+        self::$kernel = new Kernel('dev', true);
+        parent::setUp();
+    }
 
     /**
      * @test

@@ -10,9 +10,30 @@ and helps make your tests more expressive and concise.
 
 ## Installation
 
+composer.json:
+
+...
+"repositories": [
+{
+"type": "vcs",
+"url": "https://github.com/ProklUng/console-test"
+}
+],
+"require": {
+...
+"zenstruck/console-test": "dev-master",
+...
+},
+...
+```
+
 ```bash
 composer require --dev zenstruck/console-test
 ```
+
+## Отличия от оригинала
+
+Выпилена жесткая проверка на наличие загруженного ядра Symfony.
 
 ## Symfony Framework Usage
 

@@ -5,12 +5,27 @@ namespace Zenstruck\Console\Test\Tests;
 use PHPUnit\Framework\TestCase;
 use Zenstruck\Console\Test\TestCommand;
 use Zenstruck\Console\Test\Tests\Fixture\FixtureCommand;
+use Zenstruck\Console\Test\Tests\Fixture\Kernel;
 
 /**
  * @author Kevin Bond <kevinbond@gmail.com>
  */
 final class UnitTest extends TestCase
 {
+    /**
+     * @var Kernel $kernel
+     */
+    protected static $kernel;
+
+    /**
+     * @inheritDoc
+     */
+    protected function setUp(): void
+    {
+        self::$kernel = new Kernel('dev', true);
+        parent::setUp();
+    }
+
     /**
      * @test
      */
